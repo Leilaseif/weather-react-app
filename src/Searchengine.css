@@ -1,0 +1,45 @@
+
+h3{
+    top:-40px
+}
+.form{
+    margin-top: 30px;
+}
+.search{
+    border: 0.5px solid rgb(241, 203, 172);
+    background-color:white;
+    margin-right: 8px;
+    padding: 8px 50px;
+}
+.submit{
+    border:  rgba(221, 136, 209, 0.31);
+    border-radius: 4px;
+    margin-right: 8px;
+    padding: 8px 15px;
+    color: white;
+    background-color: hotpink;
+}
+.current{
+    border:  rgba(221, 136, 209, 0.31);
+    background-color: coral;
+    border-radius: 4px;
+    margin-right: 8px;
+    padding: 8px 15px;
+}
+.text{
+    margin-top: 20px;
+    font-size: 20px;
+    list-style-type: none;
+}
+.temperature{
+    margin-top: 10px;
+}
+.temperatureNumber{
+    font-size: 70px;
+
+}
+.celsiusUnit{
+    font-size: 30px;
+    line-height: 2px;
+    top: -10px;
+}

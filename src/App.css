@@ -1,38 +1,66 @@
-.App {
+body {
+  background-color: rgb(243, 202, 209);
+}
+.wholeBody{
+  border: 0.5px solid rgba(0, 0, 0, 0.42);
+  border-radius: 4px;
+  padding: 10px 40px 10px 40px;
+  margin: 10px 50px ;
+  background-color: aliceblue;
+}
+h1{
   text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin-bottom: 20px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2{
+  line-height: 2px;
+  list-style-type: none;
+  margin-top: 4px;
 }
+.Row{
+  display:flex;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.more{
+  flex: 1px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  
+}
+.icon{
+  font-size: 60px;
+}
+.windHumadity{
+  padding-top: 20px;
+  opacity: 70%;
+}
+.humadity{
+  font-size: 20px;
+ text-align: centers;
+ bottom: 20px;
+ padding-right: 50px;
+ 
+}
+.prediction{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.dayPrediction{
+  flex: 1px;
+  
+  
 }
+.iconPredict{
+  font-size: 36px;
+  
+  
+}
+.predictTemperature{
+  color: black;
+  opacity: 50%;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.openSource{
+  margin-left: 70px;
+  
 }

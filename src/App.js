@@ -1,9 +1,8 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Searchengine from './Searchengine';
 import "./Searchengine.css";
-import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css'
+
 function App() {
   return (
     <div className="App">
@@ -29,7 +28,7 @@ function App() {
         </div>
         </div>
         <div className='footer'>
-        <a className='openSource'>my open source </a>by <a className='name'>leila seif </a>
+        <a className='openSource' href="https://github.com/Leilaseif/weather-react-app">my open source </a>by <a className='name' href='/'>leila seif </a>
         </div>
 
       </header>

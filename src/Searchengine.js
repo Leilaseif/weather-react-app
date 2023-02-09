@@ -12,9 +12,10 @@ export default function Searchengine() {
             <input type="submit" value="current" className='current' />
           </form>
           <li className="text">the temperature in New York is : </li>
-          <div className='temperature'>
-          <span className='temperatureNumber'>20 </span><span className='celsiusUnit'>°c</span>
-          </div>
           
-        </div>)
-}
+          <span className='temperatureNumber'>20 </span>
+          <a className='celsiusUnit'>°c</a>
+        </div>
+          
+        
+    )}

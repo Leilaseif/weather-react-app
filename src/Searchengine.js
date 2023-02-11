@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./Searchengine.css";
 import axios from "axios";
-import FormatedDate from "./FormatedDate"
+import FormatedDate from "./FormatedDate.js";
+import { ReactDOM } from 'react';
 
-export default function Searchengine() {
+export default function Searchengine(props) {
 
   let [city, setCity]= useState("");
   let [temperature, setTemperature]= useState({});
@@ -15,8 +16,9 @@ export default function Searchengine() {
     setTemperature( {temperat: response.data.main.temp ,
        wind :response.data.wind.speed ,
         humidity :response.data.main.humidity ,
-       date: new Date (response.data.dt*1000)});
-  
+       date: new Date (response.data.dt*1000)
+      });
+  console.log(response.data)
   }
   function handlesubmit(event){
     event.preventDefault();
@@ -36,21 +38,23 @@ export default function Searchengine() {
           <input type="search"  onChange={updateCity}/>
           <input type="submit" value="Search"  />
         </form>
-        <li>
-        <FormatedDate  date={temperature.date}/>
-        </li>
+        
+          
+        <FormatedDate date={temperature.date} />
+       
         <h2 className="citySearch">{city}</h2>
         
-          <li className="text">the temperature in {city} is : </li>
+          <li className="text">the temperature in {city} is: </li>
           <span className='temperatureNumber'>{Math.round(temperature.temperat)}</span>
           <a className='celsiusUnit' href='/'>°c</a>
         <div className='Row'>
             <div className='icon more'> &#9728;&#65039;</div>
             <div className='more windHumadity'>
             <div className='wind'>wind: {Math.round(temperature.wind)}</div>
-            <div className='humadity '>humidity:{temperature.humidity}%</div>
+            <div className='humadity '>humidity: {temperature.humidity}%</div>
             </div>
         </div>
       </div>
       </div>
-   );}
+   );
+  }

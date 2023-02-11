@@ -1,8 +1,9 @@
-
+import React from 'react';
+import { ReactDOM } from 'react';
 import './App.css';
 import Searchengine from './Searchengine';
 import "./Searchengine.css";
-import FormatedDate from "./FormatedDate"
+
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <h1>weather app </h1>
        
         <Searchengine />
-       
+      
         <div className='prediction'>
           <div className='dayPrediction sunday'>sunday <br /><span className='iconPredict'>&#127782;&#65039;</span><br /><span className='predictTemperature'>20°c</span></div>
           <div className='dayPrediction monday'>monday<br /><span className='iconPredict'>&#127783;&#65039;</span><br /><span className='predictTemperature'>19°c</span></div>

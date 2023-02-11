@@ -1,58 +1,56 @@
 import React, { useState } from "react";
 import "./Searchengine.css";
 import axios from "axios";
+import FormatedDate from "./FormatedDate"
+
 export default function Searchengine() {
-  let [City, setCity] = useState("");
-  let [temperature, setTemperature] = useState({});
 
-  function handleSubmit(event) {
+  let [city, setCity]= useState("");
+  let [temperature, setTemperature]= useState({});
+  
+
+  
+  
+  function showTemperature (response){
+    setTemperature( {temperat: response.data.main.temp ,
+       wind :response.data.wind.speed ,
+        humidity :response.data.main.humidity ,
+       date: new Date (response.data.dt*1000)});
+  
+  }
+  function handlesubmit(event){
     event.preventDefault();
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${City}&appid=743bee57fddbfaf52447193a87d5dd25&units=metric`;
-    axios.get(url).then(showTemperature);
-  }
-
-  function updateCity(event) {
-    setCity(event.target.value);
-  }
-
-  function showTemperature(response) {
-    setTemperature({
-      temp: response.data.main.temp,
-      humidity: response.data.main.humidity,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
-      description: response.data.weather[0].description
-    });
-  }
-
-  if (City) {
+    let apiurl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=9777feb9b9683ea2533ba76e82f84952&units=metric`;
+    axios.get(apiurl).then(showTemperature);
+    
+    
+    }
+    function updateCity (event){
+      setCity(event.target.value);
+    }
+  
     return (
+      <div>
       <div className="forming">
-        <form onSubmit={handleSubmit}>
-          <input type="search" onChange={updateCity} />
-          <input type="submit" value="Search" />
+        <form onSubmit={handlesubmit}>
+          <input type="search"  onChange={updateCity}/>
+          <input type="submit" value="Search"  />
         </form>
-
-        <li>Temperature: {Math.round(temperature.temp)}°C</li>
-        <li>Description: {temperature.description}</li>
-        <li>Humidity: {temperature.humidity}%</li>
-
         <li>
-          <img src={temperature.icon} alt={temperature.description} />
+        <FormatedDate  date={temperature.date}/>
         </li>
-      </div>
-    );
-  } else {
-    return (
-        <div className="forming">
-          <form className="form">
-            <input type="search" className='search'/>
-            <input type="submit" value="Search" className='submit' />
-            <input type="submit" value="current" className='current' />
-          </form>
-          <li className="text">the temperature in New York is : </li>
-          <span className='temperatureNumber'>20 </span>
+        <h2 className="citySearch">{city}</h2>
+        
+          <li className="text">the temperature in {city} is : </li>
+          <span className='temperatureNumber'>{Math.round(temperature.temperat)}</span>
           <a className='celsiusUnit' href='/'>°c</a>
+        <div className='Row'>
+            <div className='icon more'> &#9728;&#65039;</div>
+            <div className='more windHumadity'>
+            <div className='wind'>wind: {Math.round(temperature.wind)}</div>
+            <div className='humadity '>humidity:{temperature.humidity}%</div>
+            </div>
         </div>
-    )
-  }
-}
+      </div>
+      </div>
+   );}

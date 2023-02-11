@@ -2,23 +2,18 @@
 import './App.css';
 import Searchengine from './Searchengine';
 import "./Searchengine.css";
+import FormatedDate from "./FormatedDate"
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <div className='wholeBody'>
+       <div className='wholeBody'>
       
         <h1>weather app </h1>
-        <h2>New York</h2>
+       
         <Searchengine />
-        <div className='Row'>
-            <div className='icon more'> &#9728;&#65039;</div>
-            <div className='more windHumadity'>
-            <div className='wind'>wind:10 km/h</div>
-            <div className='humadity '>humadity:50%</div>
-            </div>
-        </div>
+       
         <div className='prediction'>
           <div className='dayPrediction sunday'>sunday <br /><span className='iconPredict'>&#127782;&#65039;</span><br /><span className='predictTemperature'>20°c</span></div>
           <div className='dayPrediction monday'>monday<br /><span className='iconPredict'>&#127783;&#65039;</span><br /><span className='predictTemperature'>19°c</span></div>
